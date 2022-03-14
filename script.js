@@ -9,7 +9,7 @@ function computeRound(selection) {
     let computerSelection = computerPlay()
     let result = computerSelection != counter && computerSelection != selection
 
-    return [result, selection, computerSelection]
+    return [selection, computerSelection, result]
 
 }
 
@@ -19,5 +19,5 @@ function computerPlay() {
 
 function playRound(selection) {
     let results = computeRound(selection.toLowerCase())
-    console.log(`Opponent played ${results[2]} while you played ${results[1]}, you ${results[0] && "won!" || "lost."}`)
+    console.log(`You played ${results[0]} while the opponent played ${results[1]}, you ${results[2] && "won!" || "lost."}`)
 }
