@@ -31,3 +31,10 @@ function computeRound(selection) {
 function computerPlay() {
     return Object.keys(options)[Math.floor(Math.random() * Object.keys(options).length)]
 }
+
+function reset() {
+    score.player = 0
+    score.bot = 0
+    scoretext.innerHTML = `Score: <b> You: ${score.player} - Bot: ${score.bot} </b>`
+    lastplay.innerHTML = ""
+}
