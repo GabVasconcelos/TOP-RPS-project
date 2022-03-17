@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
     <title>Rock paper scissors</title>
 </head>
 <body>
-    
+    <div class="score">
+        Current score:
+    </div>
+    <div class="lastplay">
+        
+    </div>
+    <div class="buttons">
+        <button onclick="clicked(`rock`)" class="rock">Rock</button>
+        <button onclick="clicked(`paper`)" class="paper">Paper </button>
+        <button onclick="clicked(`scissors`)" class="scissors">Scissors </button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
