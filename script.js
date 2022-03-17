@@ -16,10 +16,8 @@ function playRound(selection) {
     if (!results[3]) score[results[2] && "player" || "bot"]++
     scoretext.innerHTML = `Score: <b> You: ${score.player} - Bot: ${score.bot} </b>`
     lastplay.innerHTML = `You played ${results[0]} while the opponent played ${results[1]}, you ${results[3] && "drew." || results[2] && "won!" || "lost."}`
-    console.table(score)
 
     return results
-    // return `You played ${results[0]} while the opponent played ${results[1]}, you ${results[2] && "won!" || "lost."}`
 }
 
 function computeRound(selection) {
@@ -33,15 +31,3 @@ function computeRound(selection) {
 function computerPlay() {
     return Object.keys(options)[Math.floor(Math.random() * Object.keys(options).length)]
 }
-
-function game() {
-    for (let i=0; i<5; i++) {
-        alert(playRound(prompt()))
-    }
-}
-
-function clicked(arg) {
-    playRound(arg)
-}
-
-// game()
