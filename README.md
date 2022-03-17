@@ -1,2 +1,2 @@
 # TOP-RPS-project
-Rock paper scissors project for The Odin Project
+Interesting rock paper scissors webpage for The Odin Project
