@@ -1,5 +1,6 @@
 const scoretext = document.querySelector(".score")
 const lastplay = document.querySelector(".lastplay")
+const buttons = document.querySelectorAll(".playbutton")
 const options = {
     "rock": "paper",
     "paper": "scissors",
@@ -38,3 +39,9 @@ function reset() {
     scoretext.innerHTML = `Score: <b> You: ${score.player} - Bot: ${score.bot} </b>`
     lastplay.innerHTML = ""
 }
+
+buttons.forEach(element => {
+    element.addEventListener("click", event => {
+        playRound(event.target.innerHTML.toLowerCase())
+    })
+});
