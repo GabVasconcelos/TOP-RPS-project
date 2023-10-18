@@ -13,20 +13,27 @@ const score = {
 }
 
 function playRound(selection) {
-    let results = computeRound(selection.toLowerCase())
-    if (!results[3]) score[results[2] && "player" || "bot"]++
+    const {selected, computerSelection, win, draw} = computeRound(selection)
+    console.log(selected, computerSelection, win, draw)
+    if (!draw) score[win && "player" || "bot"]++
     scoretext.innerHTML = `Score: <b> You: ${score.player} - Bot: ${score.bot} </b>`
-    lastplay.innerHTML = `You played ${results[0]} while the opponent played ${results[1]}, you ${results[3] && "drew." || results[2] && "won!" || "lost."}`
+    lastplay.innerHTML = `You played ${selected} while the opponent played ${computerSelection}, you ${draw && "drew." || win && "won!" || "lost."}`
 
-    return results
+    // return selected, comp, win, draw
 }
 
 function computeRound(selection) {
     let counter = options[selection.toLowerCase()]
     let computerSelection = computerPlay()
-    let result = computerSelection != counter && computerSelection != selection
     let draw = computerSelection == selection
-    return [selection, computerSelection, result, draw]
+    let win = !draw && (selection == options[computerSelection])
+    console.log(selection, computerSelection, draw, win)
+    return {
+        selected: selection,
+        computerSelection: computerSelection,
+        win: win,
+        draw: draw
+    }
 }
 
 function computerPlay() {
